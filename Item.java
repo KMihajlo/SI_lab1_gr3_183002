@@ -20,10 +20,41 @@ class Item {
 	Tip tax = new Tip();
 
 	//TODO constructor
+	Tip(int id, String name, double price)
+	{
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
 
 	//TODO setters and getters
+	int setId(int id)
+	{
+		this.id = id;
+	}
+	String setName(String name)
+	{
+		this.name = name;
+	}
+	double setPrice(double price)
+	{
+		this.price = price;
+	}
+	void getId()
+	{
+		return id;
+	}
+	void getName()
+	{
+		return name;
+	}
+	void getPrice()
+	{
+		return price;
+	}
 
 	double taxReturn () {
 		//TODO
+		return price * 0.15;
 	}
 }
