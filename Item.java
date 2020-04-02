@@ -58,3 +58,41 @@ class Item {
 		return price * 0.15;
 	}
 }
+
+class Receipt{
+	
+	List<Item> items = new ArrayList<Item>();
+
+	public void add(int id, Item t)
+	{
+		if(id >= 0 && id <= items.length){
+ 		Item[] newData = (Item[])new Object[items.length + 1];
+
+ 		for(int i = 0; i < id; i++)
+ 			newData[i] = items[i];
+
+ 		newData[id] = t;
+
+ 		for(int i = id; i < items.length; i++)
+ 			newData[i+1] = items[i];
+
+ 		items = newData;
+ 		items.length = items.length + 1;
+
+	}
+	public void delete(int id)
+	{
+		if(id >= 0 && id < items.length){
+
+ 		Item[] newData = (Item[])new Object[items.length - 1];
+
+ 		for(int i = 0; i < id; i++)
+ 		newData[i] = items[i];
+
+ 		for(int i = id + 1; i < items.length; i++)
+ 		newData[i-1] = items[i];
+
+ 		items = newData;
+ 		items.length = items.length - 1;
+	}
+}
